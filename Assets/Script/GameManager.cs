@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Header("# Game Control")]
     public float gameTime;
     public float maxGameTime = 2 * 10f;
 
+    [Header("# Game Object")]
     public Player player;
 
     private void Awake()
