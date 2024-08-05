@@ -240,12 +240,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 675202004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5bb6d50b30544cf86d0369ed4e2655, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ba02e3367bc94f75b92e923c4a724b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameTime: 0
   maxGameTime: 20
-  player: {fileID: 0}
+  player: {fileID: 1627707284}
 --- !u!4 &675202006
 Transform:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1627707280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b7bad68f48c8452195eae7376458865, type: 3}
+  m_Script: {fileID: 11500000, guid: c6a900be49c55433585f18bffb178b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}

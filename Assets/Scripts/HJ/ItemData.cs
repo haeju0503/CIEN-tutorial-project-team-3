@@ -6,12 +6,14 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
 
-    public enum ItemType { Melee, Range, PassiveItem, Heal }
+    public enum ItemType { Melee, Range, Glove, Shoe, Heal }
+    // Glove, Shoe 이런것 대신 Passive 처럼 하나로 묶는것도 생각해봐야 할 듯
 
     [Header("# Main Info")]
     public ItemType itemType;
     public int itemId;
     public string itemName;
+    [TextArea]
     public string itemDesc;
     public Sprite itemIcon;
 
