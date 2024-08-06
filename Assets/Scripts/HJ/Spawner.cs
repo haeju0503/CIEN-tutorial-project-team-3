@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
     {
         GameObject enemy = GameManager.instance.pool.Get(0);
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
-        enemy.GetComponent<Enemy1>().Init(spawnData[level]);
+        enemy.GetComponent<Enemy01>().Init(spawnData[level]);
     }
 }
 [System.Serializable]

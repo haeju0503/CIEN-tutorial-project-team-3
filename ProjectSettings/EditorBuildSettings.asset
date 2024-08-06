@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalScenes.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/HJ.unity
+    guid: 1fbebe389d00d4240bd5d374c5c9b841
   m_configObjects: {}

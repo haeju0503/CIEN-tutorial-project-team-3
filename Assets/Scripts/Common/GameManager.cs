@@ -89,8 +89,9 @@ public class GameManager : MonoBehaviour
     }
     public void GameRetry()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Scenes/FinalScenes");
         //안에 이름 또는 scene index
+        //File -> Build Setting에서 확인가능
     }
     private void Update()
     {
