@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
         speed *= Character.Speed;
         anim.runtimeAnimatorController = animCon[GameManager.instance.playerId];
     }
+    
+    /*
     void OnMove(InputValue value)
     {
         if (!GameManager.instance.isLive)
@@ -38,12 +40,17 @@ public class Player : MonoBehaviour
 
         inputVec = value.Get<Vector2>();
     }
+    */
     private void FixedUpdate()
     {
         if (!GameManager.instance.isLive)
             return;
 
-        Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
+        // 키입력을 벡터에 저장
+        inputVec = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 nextVec = inputVec.normalized * speed * Time.deltaTime;
+
+        // 입력받은 벡터만큼 이동
         rigid.MovePosition(this.rigid.position + nextVec);
     }
     private void LateUpdate()
