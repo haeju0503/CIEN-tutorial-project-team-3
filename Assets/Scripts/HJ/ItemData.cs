@@ -6,8 +6,8 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
 
-    public enum ItemType { Melee, Range, Glove, Shoe, Heal }
-    // Glove, Shoe ÀÌ·±°Í ´ë½Å Passive Ã³·³ ÇÏ³ª·Î ¹­´Â°Íµµ »ý°¢ÇØºÁ¾ß ÇÒ µí
+    public enum ItemType { Melee, Range, Glove, Shoe, Heal, AI }
+    // Glove, Shoe ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Passive Ã³ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°Íµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Øºï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 
     [Header("# Main Info")]
     public ItemType itemType;

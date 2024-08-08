@@ -24,7 +24,7 @@ public class Item : MonoBehaviour
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
         textName = texts[1];
-        textDesc = texts[2]; //ÀÎ½ºÆåÅÍ Ã¢ ¼ø¼­°¡ ·¹º§->ÀÌ¸§->¼³¸í¼øÀÌ¶ó
+        textDesc = texts[2]; //ï¿½Î½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½->ï¿½Ì¸ï¿½->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½
         textName.text = data.itemName;
     }
     private void OnEnable()
@@ -35,6 +35,7 @@ public class Item : MonoBehaviour
         {
             case ItemData.ItemType.Melee:
             case ItemData.ItemType.Range:
+            case ItemData.ItemType.AI:
                 textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
                 break;
             case ItemData.ItemType.Glove:
@@ -52,6 +53,7 @@ public class Item : MonoBehaviour
         {
             case ItemData.ItemType.Melee:
             case ItemData.ItemType.Range:
+            case ItemData.ItemType.AI:
                 if (level == 0)
                 {
                     GameObject newWeapon = new GameObject();

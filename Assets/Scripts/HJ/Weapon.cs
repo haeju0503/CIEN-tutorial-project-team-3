@@ -25,10 +25,10 @@ public class Weapon : MonoBehaviour
 
         switch (Id)
         {
-            case 0: //(��)���� ���°�
+            case 0: //(��)���� ���°�
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
                 break;
-            case 1: //���Ÿ�
+            case 1: //���Ÿ�
                 timer += Time.deltaTime;
 
                 if (timer > speed)
@@ -36,6 +36,8 @@ public class Weapon : MonoBehaviour
                     timer = 0f;
                     Fire();
                 }
+                break;
+            case 5:
                 break;
             default:
                 break;
@@ -81,10 +83,16 @@ public class Weapon : MonoBehaviour
             case 1:
                 speed = 0.5f * Character.WeaponRate;
                 break;
-
+            case 5:
+                SetAi();
+                break;
             default:
                 break;
         }
+
+        // 무기 추가했더니 에러가 나서 임시방편으로 넣었습니다
+        if (data.itemType == ItemData.ItemType.AI)
+            return;
 
         //Hand Set
         Hand hand = player.hands[(int)data.itemType];
@@ -122,6 +130,22 @@ public class Weapon : MonoBehaviour
             bullet.GetComponent<Bullet>().Init(damage, -100, Vector3.zero); // -100 is infinity Per.
 
         }
+    }
+
+    // 챗GPT 무기 관리하는 함수
+    void SetAi()
+    {
+        Transform bullet;
+
+        bullet = GameManager.instance.pool.Get(prefabId).transform;
+        bullet.parent = transform;
+
+        bullet.localPosition = Vector3.zero;
+
+        Vector3 scaleVec = new Vector3(1+(count/100), 1+(count/100), 0);
+        bullet.localScale = scaleVec;
+
+        bullet.GetComponent<Bullet>().Init(damage, -100, Vector3.zero);
     }
 
     void Fire()

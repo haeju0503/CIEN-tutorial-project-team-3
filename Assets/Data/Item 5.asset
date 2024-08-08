@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388aa58657317fa4093ceff2a2d212a5, type: 3}
+  m_Name: Item 5
+  m_EditorClassIdentifier: 
+  itemType: 5
+  itemId: 5
+  itemName: ChatGPT
+  itemDesc: "\uD53C\uD574\uB7C9 {0}% \uC99D\uAC00\n\uBC94\uC704 {0}% \uC99D\uAC00"
+  itemIcon: {fileID: 0}
+  baseDamage: 2
+  baseCount: 0
+  damages:
+  - 0.5
+  - 1
+  - 1.5
+  - 2
+  - 2.5
+  counts: 14000000280000003c0000005000000064000000
+  projectile: {fileID: 7368215443546126498, guid: 46247af6072694d6b8c9c635239f3d06, type: 3}
+  hand: {fileID: 0}
