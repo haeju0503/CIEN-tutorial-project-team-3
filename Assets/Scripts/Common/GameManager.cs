@@ -93,6 +93,10 @@ public class GameManager : MonoBehaviour
         //안에 이름 또는 scene index
         //File -> Build Setting에서 확인가능
     }
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
     private void Update()
     {
         if (!isLive)
