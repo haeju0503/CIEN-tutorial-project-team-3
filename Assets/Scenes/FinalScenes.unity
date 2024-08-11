@@ -773,6 +773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff30c286fa6d7f5479e1bf5320672164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BGMslider: {fileID: 0}
+  SFXslider: {fileID: 0}
   bgmClip: {fileID: 8300000, guid: 4559935c00ef8e94b846e2e03e39f0d0, type: 3}
   bgmVolume: 0.2
   sfxClips:
@@ -4397,7 +4399,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6805,7 +6807,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1558638656}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 11
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -8539,6 +8541,13 @@ MonoBehaviour:
   nextExp: 01000000010000000100000002000000020000000200000003000000030000000300000004000000050000000a000000
   health: 0
   maxHealth: 100
+  scholarship: 30000
+  DamageMul: 1
+  StaticDamage: 0
+  additionalCount: 0
+  shotSpeed: 0
+  KnockBack: 1
+  rate: 0
 --- !u!4 &2012241029
 Transform:
   m_ObjectHideFlags: 0

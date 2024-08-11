@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    //이서 다 예비, 캐릭터 추가(또는 기획)하면 그걸로 바꾸셈
+    //이것들 다 예비, 캐릭터 추가(또는 기획)하면 그걸로 바꾸셈
     public static float Speed
     {
         get { return GameManager.instance.playerId == 0 ? 1.1f : 1f; }

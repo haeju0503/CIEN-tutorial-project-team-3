@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     }
     public void LevelUp(float damage, int count)
     {
-        this.damage = damage * Character.Damage;
+        this.damage = damage * Character.Damage * GameManager.instance.DamageMul + GameManager.instance.StaticDamage;
         this.count += count;
 
         if (Id == 0)
@@ -60,8 +60,8 @@ public class Weapon : MonoBehaviour
 
         //Property Set
         Id = data.itemId;
-        damage = data.baseDamage * Character.Damage;
-        count = data.baseCount + Character.Count;
+        damage = data.baseDamage * Character.Damage * GameManager.instance.DamageMul + GameManager.instance.StaticDamage;
+        count = data.baseCount + Character.Count + GameManager.instance.additionalCount;
 
         for (int index = 0; index < GameManager.instance.pool.prefabs.Length; index++)
         {
@@ -134,7 +134,7 @@ public class Weapon : MonoBehaviour
         Vector3 targetPos = player.scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
 
-        dir = dir.normalized * 7;
+        dir = dir.normalized * (5 + GameManager.instance.shotSpeed);
 
         Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
         bullet.position = transform.position;

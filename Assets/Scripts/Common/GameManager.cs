@@ -31,6 +31,16 @@ public class GameManager : MonoBehaviour
     public float health;
     public float maxHealth = 100;
 
+    [Header("# EU Upgrade")]
+    public int scholarship = 30000;
+    public float DamageMul = 1;
+    public float StaticDamage = 0;
+    public int additionalCount = 0;
+    public float shotSpeed = 0;
+    public float KnockBack = 0;
+    public float rate = 0;
+    
+
     private void Awake()
     {
         instance = this;
