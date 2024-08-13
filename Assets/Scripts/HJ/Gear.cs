@@ -43,12 +43,12 @@ public class Gear : MonoBehaviour
             switch (weapon.Id)
             {
                 case 0: //(삽) 빙빙 도는 것
-                    float speed = 150 * Character.WeaponSpeed;
+                    float speed = 150 * Character.WeaponSpeed + 50 * GameManager.instance.rate;
                     weapon.speed = speed + (speed * rate);
                     break;
                 default: // 디폴트가 총 쏘는것, 무기 많아지면 케이스 따로 만들어야될지도..
                     speed = 0.5f * Character.WeaponRate;
-                    weapon.speed = speed * (1f - rate);
+                    weapon.speed = speed * (1f - rate) * (1f - GameManager.instance.rate);
                     break;
             }
         }

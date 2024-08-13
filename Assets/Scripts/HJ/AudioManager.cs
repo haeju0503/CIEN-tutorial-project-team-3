@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.UI;
+using static AudioManager;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
+
+    [Header(" Slider info")]
+    public Slider BGMslider;
+    public Slider SFXslider;
 
     [Header("# BGM")]
     public AudioClip bgmClip;
@@ -85,6 +93,36 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[loopIndex].clip = sfxClips[(int)sfx + ranIndex];
             sfxPlayers[loopIndex].Play();
             break;
+        }
+    }
+    public void ButtonClick()
+    {
+        //버튼 눌렸을 때 소리나도록 하는 함수
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            int loopIndex = (index + channelIndex) % sfxPlayers.Length;
+
+            if (sfxPlayers[loopIndex].isPlaying)
+                continue;
+
+            channelIndex = loopIndex;
+            sfxPlayers[loopIndex].clip = sfxClips[8];
+            sfxPlayers[loopIndex].Play();
+            break;
+        }
+    }
+    public void SetBGM()
+    {
+        bgmVolume = 0.3f * BGMslider.value;
+        bgmPlayer.volume = 0.3f * BGMslider.value;
+        
+    }
+    public void SetSFX()
+    {
+        sfxVolume = 0.75f * SFXslider.value;
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            sfxPlayers[index].volume = sfxVolume;
         }
     }
 

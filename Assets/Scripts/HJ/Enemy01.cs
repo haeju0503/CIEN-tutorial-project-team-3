@@ -102,7 +102,7 @@ public class Enemy01 : MonoBehaviour
             yield return wait;
             Vector3 playerPos = GameManager.instance.player.transform.position;
             Vector3 dirVec = transform.position - playerPos;
-            rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
+            rigid.AddForce(dirVec.normalized * (3 + GameManager.instance.KnockBack), ForceMode2D.Impulse);
 
         }
         void Dead()
