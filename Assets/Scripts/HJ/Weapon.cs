@@ -50,6 +50,9 @@ public class Weapon : MonoBehaviour
 
         if (Id == 0)
             Batch();
+        
+        if (Id == 5)
+            SetAi();
 
         player.BroadcastMessage("ApplyGear", SendMessageOptions.DontRequireReceiver);
     }
