@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   euType: 0
   euName: "\uCCB4\uB825\uC99D\uAC00"
-  euDesc: "\uCD5C\uB300 \uCCB4\uB825\uC774 {0}\uB9CC\uD07C \uC99D\uAC00\uD569\uB2C8\uB2E4.\n(\uD604\uC7AC
-    \uCCB4\uB825 {0})"
-  maxLevel: 0
+  euDesc: "\uCD5C\uB300 \uCCB4\uB825\uC774 {0}\uB9CC\uD07C \uC99D\uAC00\uD569\uB2C8\uB2E4.\n\uD604\uC7AC
+    \uCD5C\uB300\uCCB4\uB825 \uC99D\uAC00\uB7C9 : {1}"
+  maxLevel: 5
   floatIncrement: []
-  intIncrement: 
+  intIncrement: 0a0000000a0000000f0000000f0000001400000014000000
   cost: 

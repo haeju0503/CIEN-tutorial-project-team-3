@@ -1957,6 +1957,7 @@ GameObject:
   - component: {fileID: 286132464}
   - component: {fileID: 286132463}
   - component: {fileID: 286132462}
+  - component: {fileID: 286132465}
   m_Layer: 5
   m_Name: Button Downrade
   m_TagString: Untagged
@@ -2066,6 +2067,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286132460}
   m_CullTransparentMesh: 1
+--- !u!114 &286132465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286132460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9807f9d952fc5c841b407adea3af14ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: bb93fb1ba27f4524086bcff538957cd3, type: 2}
+  level: 0
+  type: 3
 --- !u!1 &286781927
 GameObject:
   m_ObjectHideFlags: 0
@@ -6460,6 +6476,7 @@ GameObject:
   - component: {fileID: 972686687}
   - component: {fileID: 972686689}
   - component: {fileID: 972686688}
+  - component: {fileID: 972686690}
   m_Layer: 5
   m_Name: Decs
   m_TagString: Untagged
@@ -6525,6 +6542,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972686686}
   m_CullTransparentMesh: 1
+--- !u!114 &972686690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972686686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9807f9d952fc5c841b407adea3af14ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: bb93fb1ba27f4524086bcff538957cd3, type: 2}
+  level: 0
+  type: 1
 --- !u!1 &985440778
 GameObject:
   m_ObjectHideFlags: 0
@@ -7192,6 +7224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: bb93fb1ba27f4524086bcff538957cd3, type: 2}
   level: 0
+  type: 0
 --- !u!1 &1087851271
 GameObject:
   m_ObjectHideFlags: 0
@@ -11468,7 +11501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "\uC124\uBA851\n\uC124\uBA852"
 --- !u!222 &1737136368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12721,7 +12754,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Lv -1
+
+    cost-9999'
 --- !u!222 &1847704358
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12742,6 +12777,7 @@ GameObject:
   - component: {fileID: 1898853014}
   - component: {fileID: 1898853013}
   - component: {fileID: 1898853012}
+  - component: {fileID: 1898853015}
   m_Layer: 5
   m_Name: Button Upgrade
   m_TagString: Untagged
@@ -12812,7 +12848,55 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1898853013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1056328994}
+        m_TargetAssemblyTypeName: EU, Assembly-CSharp
+        m_MethodName: LevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 972686690}
+        m_TargetAssemblyTypeName: EU, Assembly-CSharp
+        m_MethodName: LevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1898853015}
+        m_TargetAssemblyTypeName: EU, Assembly-CSharp
+        m_MethodName: LevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 286132465}
+        m_TargetAssemblyTypeName: EU, Assembly-CSharp
+        m_MethodName: LevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1898853013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12851,6 +12935,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898853010}
   m_CullTransparentMesh: 1
+--- !u!114 &1898853015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898853010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9807f9d952fc5c841b407adea3af14ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: bb93fb1ba27f4524086bcff538957cd3, type: 2}
+  level: 0
+  type: 2
 --- !u!1 &1904134647
 GameObject:
   m_ObjectHideFlags: 0
@@ -12921,7 +13020,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Lv +1
+
+    Cost 9999'
 --- !u!222 &1904134650
 CanvasRenderer:
   m_ObjectHideFlags: 0
