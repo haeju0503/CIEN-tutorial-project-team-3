@@ -21,16 +21,30 @@ public class EU : MonoBehaviour
 
     private void Awake()
     {
-        level = -1;
-        LevelUp();
+        LevelChange(0);
     }
 
-    public void LevelUp()
+    public void LevelChange(int amount)
     {
-        if (level == data.maxLevel)
-            return;
 
-        level++;
+        if (amount == 0)
+        {
+            level = 0;
+        }
+        else if (amount > 0)
+        {
+            if (level != data.maxLevel)
+            {
+                level++;
+            }
+        }
+        else if (amount < 0)
+        {
+            if (level > 0)
+            {
+                level--;
+            }
+        }
 
         Text[] texts = GetComponentsInChildren<Text>();
 
@@ -56,21 +70,27 @@ public class EU : MonoBehaviour
                             textDesc.text = string.Format(data.euDesc, data.intIncrement[level], sum); //이떄만 버튼클릭 소리나게 하고 싶은데...
                         break;
                     case EUData.EUType.FloatEU:
-
-                        break;
+                        
                     case EUData.EUType.SpecialEU:
-
-                        break;
+                        
                     default:
 
                         break;
                 }
                 break;
             case EUObjectType.upButton:
-
+                textUpgrade = texts[0];
+                if (level == data.maxLevel)
+                    textUpgrade.text = string.Format("Lv Max");
+                else
+                    textUpgrade.text = string.Format("Lv + 1\nCost {0}", data.cost[level]); //이떄만 버튼클릭 소리나게 하고 싶은데...
                 break;
             case EUObjectType.downButton:
-
+                textDowngrade = texts[0];
+                if (level == 0)
+                    textDowngrade.text = string.Format("Lv Min");
+                else
+                    textDowngrade.text = string.Format("Lv - 1\nCost -{0}", data.cost[level - 1]); //이떄만 버튼클릭 소리나게 하고 싶은데...
                 break;
             default:
                 break;
