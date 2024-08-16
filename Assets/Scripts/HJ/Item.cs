@@ -24,7 +24,7 @@ public class Item : MonoBehaviour
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
         textName = texts[1];
-        textDesc = texts[2]; //�ν����� â ������ ����->�̸�->�������̶�
+        textDesc = texts[2]; //오브젝트 순서가 레벨->이름->설명 순이라
         textName.text = data.itemName;
     }
     private void OnEnable()

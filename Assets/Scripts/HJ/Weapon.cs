@@ -25,10 +25,10 @@ public class Weapon : MonoBehaviour
 
         switch (Id)
         {
-            case 0: //(��)���� ���°�
+            case 0: //(삽) 빙빙 도는 것
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
                 break;
-            case 1: //���Ÿ�
+            case 1: //원거리
                 timer += Time.deltaTime;
 
                 if (timer > speed)

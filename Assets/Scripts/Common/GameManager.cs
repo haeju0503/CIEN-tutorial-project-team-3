@@ -144,4 +144,27 @@ public class GameManager : MonoBehaviour
         isLive = true;
         Time.timeScale = 1;
     }
+
+    public int GetScholarship()
+    {
+        return scholarship;
+    }
+    public void AddScholarship(int amount)
+    {
+        scholarship += amount;
+    }
+    public void AddMaxHealth(int amount)
+    {
+        maxHealth += amount;
+    }
+    public void AddCount(int amount)
+    {
+        additionalCount += amount;
+    }
+    public void AddDamageMul(float amount)
+    {
+        DamageMul += amount;
+    }
+
+
 }

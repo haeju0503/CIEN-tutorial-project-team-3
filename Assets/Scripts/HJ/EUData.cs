@@ -9,9 +9,15 @@ public class EUData : ScriptableObject
 
     [Header("# Main Info")]
     public EUType euType;
+    public int index;
     public string euName;
     [TextArea]
+    public string euNDesc;
+    [TextArea]
     public string euDesc;
+    [TextArea]
+    public string euuMaxLvDesc;
+
 
     [Header("# Level Data")]
     public int maxLevel;
