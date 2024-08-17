@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EU AdditionalCount I
   m_EditorClassIdentifier: 
   euType: 0
-  index: 1
+  index: EUCountLv
   euName: "Count\uC99D\uAC00"
   euNDesc: "\uACF5\uCC45\uC758 \uAC2F\uC218\uACFC \uCD1D\uC54C\uC758 \uAD00\uD1B5\uB825\uC774
     \uC99D\uAC00\uD569\uB2C8\uB2E4\n\uD604\uC7AC \uAD00\uD1B5\uB825 \uC99D\uAC00\uB7C9

@@ -45,6 +45,19 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         isLive = false;
+        if (!PlayerPrefs.HasKey("Scholarship"))
+        {
+            scholarship = 50;
+            PlayerPrefs.SetInt("Scholarship", scholarship);
+        }
+        else
+        {
+            scholarship = PlayerPrefs.GetInt("Scholarship");
+        }
+    }
+    public void TestDragon(int i) //잘 작동하는지 확인하는 테스트용 함수 (삭제해도 상관X)
+    {
+        Debug.Log(i);
     }
     public void GameStart(int id) 
     {

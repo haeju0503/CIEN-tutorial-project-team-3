@@ -9,7 +9,7 @@ public class EUData : ScriptableObject
 
     [Header("# Main Info")]
     public EUType euType;
-    public int index;
+    public string index;
     public string euName;
     [TextArea]
     public string euNDesc;

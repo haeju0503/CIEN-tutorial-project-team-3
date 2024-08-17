@@ -33,7 +33,33 @@ public class EU : MonoBehaviour
     {
         if (amount == 0)
         {
-            
+            switch (data.index)
+            {
+                case "EUHealthLv": //health
+                    for (int i = 0; i < PlayerPrefs.GetInt("EUHealthLv"); i++)
+                    {
+                        LevelChange(1);
+                    }
+                    break;
+                case "EUCountLv":
+                    for (int i = 0; i < PlayerPrefs.GetInt("EUCountLv"); i++)
+                    {
+                        LevelChange(1);
+                    }
+                    break;
+                case "EUDamageMulLv":
+                    for (int i = 0; i < PlayerPrefs.GetInt("EUDamageMulLv"); i++)
+                    {
+                        LevelChange(1);
+                    }
+                    break;
+                default:
+
+                    break;
+
+
+
+            }
         }
         else if (amount > 0)
         {
@@ -43,24 +69,27 @@ public class EU : MonoBehaviour
                 {
                     if (type == EUObjectType.decs)
                     {
-                        GameManager.instance.scholarship -= data.cost[level];
-                        StatChange(true);
                         level++;
+                        GameManager.instance.scholarship -= data.cost[level-1];
+                        PlayerPrefs.SetInt("Scholarship", GameManager.instance.scholarship);
+                        StatChange(true);
                     }
                 }
-                level = levelSaver.level;
+                level = PlayerPrefs.GetInt(data.index);
             }
         }
         else if (amount < 0)
         {
             if (level > 0)
             {
-                level--;
                 if (type == EUObjectType.decs)
                 {
+                    level--;
                     GameManager.instance.scholarship += data.cost[level];
+                    PlayerPrefs.SetInt("Scholarship", GameManager.instance.scholarship);
                     StatChange(false);
                 }
+                level = PlayerPrefs.GetInt(data.index);
             }
         }
 
@@ -156,35 +185,38 @@ public class EU : MonoBehaviour
     {
         switch (data.index)
         {
-            case 0: // 0 => health
+            case "EUHealthLv": // 0 => health
                 if (isUp == true)
                 {
-                    GameManager.instance.AddMaxHealth(data.intIncrement[level]);
+                    GameManager.instance.AddMaxHealth(data.intIncrement[level - 1]);
                 }
                 else if (isUp == false)
                 {
                     GameManager.instance.AddMaxHealth(-1 * data.intIncrement[level]);
                 }
+                PlayerPrefs.SetInt("EUHealthLv", level);
                 break;
-            case 1: // 1 => Count
+            case "EUCountLv": // 1 => Count
                 if (isUp == true)
                 {
-                    GameManager.instance.AddCount(data.intIncrement[level]);
+                    GameManager.instance.AddCount(data.intIncrement[level - 1]);
                 }
                 else if (isUp == false)
                 {
                     GameManager.instance.AddCount(-1 * data.intIncrement[level]);
                 }
+                PlayerPrefs.SetInt("EUCountLv", level);
                 break;
-            case 2: // 2 => Damage Multuple
+            case "EUDamageMulLv": // 2 => Damage Multuple
                 if (isUp == true)
                 {
-                    GameManager.instance.AddDamageMul(data.floatIncrement[level]);
+                    GameManager.instance.AddDamageMul(data.floatIncrement[level - 1]);
                 }
                 else if (isUp == false)
                 {
                     GameManager.instance.AddDamageMul(-1 * data.floatIncrement[level]);
                 }
+                PlayerPrefs.SetInt("EUDamageMulLv", level);
                 break;
 
 
