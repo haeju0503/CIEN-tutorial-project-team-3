@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public float maxHealth = 100;
 
     [Header("# EU Upgrade")]
-    public int scholarship = 30000;
+    public int scholarship = 0;
     public float DamageMul = 1;
     public float StaticDamage = 0;
     public int additionalCount = 0;
@@ -158,6 +158,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    // EU ฐüทร ------------------------------------------------
     public int GetScholarship()
     {
         return scholarship;
@@ -178,6 +179,9 @@ public class GameManager : MonoBehaviour
     {
         DamageMul += amount;
     }
-
+    public void AddStaticDamage(float amount)
+    {
+        StaticDamage += amount;
+    }
 
 }

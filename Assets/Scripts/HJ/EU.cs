@@ -10,10 +10,9 @@ public class EU : MonoBehaviour
     public EUData data;
     public int level;
 
-    public enum EUObjectType { name, decs, upButton, downButton, scholarship }
+    public enum EUObjectType { name, decs, upButton, downButton, scholarship}
 
     public EUObjectType type;
-    public EU levelSaver;
 
     Text textName;
     Text textNDesc;
@@ -23,10 +22,25 @@ public class EU : MonoBehaviour
     Text textDowngrade;
     Text textScholarship;
 
+    RectTransform rect;
+
+    private void Awake()
+    {
+        rect = GetComponent<RectTransform>();
+    }
+    public void Show()
+    {
+        rect.localScale = Vector3.one;
+    }
+    public void Hide()
+    {
+        rect.localScale = Vector3.zero;
+    }
+
     private void Start()
     {
-        level = 0;
-        LevelChange(0);
+        if (data != null)
+            LevelChange(0);
     }
 
     public void LevelChange(int amount)
@@ -38,19 +52,45 @@ public class EU : MonoBehaviour
                 case "EUHealthLv": //health
                     for (int i = 0; i < PlayerPrefs.GetInt("EUHealthLv"); i++)
                     {
-                        LevelChange(1);
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            StatChange(true);
+                        }
+                        level = PlayerPrefs.GetInt(data.index);
                     }
                     break;
                 case "EUCountLv":
                     for (int i = 0; i < PlayerPrefs.GetInt("EUCountLv"); i++)
                     {
-                        LevelChange(1);
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            StatChange(true);
+                        }
+                        level = PlayerPrefs.GetInt(data.index);
                     }
                     break;
                 case "EUDamageMulLv":
                     for (int i = 0; i < PlayerPrefs.GetInt("EUDamageMulLv"); i++)
                     {
-                        LevelChange(1);
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            StatChange(true);
+                        }
+                        level = PlayerPrefs.GetInt(data.index);
+                    }
+                    break;
+                case "EUStaticDamageLv":
+                    for (int i = 0; i < PlayerPrefs.GetInt("EUStaticDamageLv"); i++)
+                    {
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            StatChange(true);
+                        }
+                        level = PlayerPrefs.GetInt(data.index);
                     }
                     break;
                 default:
@@ -102,8 +142,17 @@ public class EU : MonoBehaviour
                 textNDesc = texts[1];
                 textNLv = texts[2];
                 textName.text = string.Format(data.euName);
-                
+
                 if (data.euType == EUData.EUType.FloatEU)
+                {
+                    float sumf = 0f;
+                    for (int index = 0; index < level; index++)
+                    {
+                        sumf += data.floatIncrement[index];
+                    }
+                    textNDesc.text = string.Format(data.euNDesc, sumf);
+                }
+                else if (data.euType == EUData.EUType.FloatMulEU)
                 {
                     float sumf = 0f;
                     for (int index = 0; index < level; index++)
@@ -120,6 +169,7 @@ public class EU : MonoBehaviour
                         sum += data.intIncrement[index];
                     }
                     textNDesc.text = string.Format(data.euNDesc, sum);
+
                 }
                 textNLv.text = string.Format("Lv {0}", level);
                 break;
@@ -137,10 +187,23 @@ public class EU : MonoBehaviour
                             textDesc.text = string.Format(data.euuMaxLvDesc, sum);
                         else
                             textDesc.text = string.Format(data.euDesc, data.intIncrement[level], sum); //이떄만 버튼클릭 소리나게 하고 싶은데...
+
                         break;
                     case EUData.EUType.FloatEU:
                         textDesc = texts[0];
                         float sumf = 0f;
+                        for (int index = 0; index < level; index++)
+                        {
+                            sumf += data.floatIncrement[index];
+                        }
+                        if (level == data.maxLevel)
+                            textDesc.text = string.Format(data.euuMaxLvDesc, sumf);
+                        else
+                            textDesc.text = string.Format(data.euDesc, data.floatIncrement[level], sumf); //이떄만 버튼클릭 소리나게 하고 싶은데...
+                        break;
+                    case EUData.EUType.FloatMulEU:
+                        textDesc = texts[0];
+                        sumf = 0f;
                         for (int index = 0; index < level; index++)
                         {
                             sumf += data.floatIncrement[index];
@@ -159,12 +222,14 @@ public class EU : MonoBehaviour
                 break;
             case EUObjectType.upButton:
                 textUpgrade = texts[0];
+
                 if (level == data.maxLevel)
                     textUpgrade.text = string.Format("Lv Max");
                 else
                     textUpgrade.text = string.Format("Lv + 1\nCost {0}", data.cost[level]); //이떄만 버튼클릭 소리나게 하고 싶은데...
                 break;
             case EUObjectType.downButton:
+
                 textDowngrade = texts[0];
                 if (level == 0)
                     textDowngrade.text = string.Format("Lv Min");
@@ -183,9 +248,12 @@ public class EU : MonoBehaviour
 
     public void StatChange(bool isUp)
     {
+
+
         switch (data.index)
         {
             case "EUHealthLv": // 0 => health
+
                 if (isUp == true)
                 {
                     GameManager.instance.AddMaxHealth(data.intIncrement[level - 1]);
@@ -195,6 +263,7 @@ public class EU : MonoBehaviour
                     GameManager.instance.AddMaxHealth(-1 * data.intIncrement[level]);
                 }
                 PlayerPrefs.SetInt("EUHealthLv", level);
+
                 break;
             case "EUCountLv": // 1 => Count
                 if (isUp == true)
@@ -218,7 +287,17 @@ public class EU : MonoBehaviour
                 }
                 PlayerPrefs.SetInt("EUDamageMulLv", level);
                 break;
-
+            case "EUStaticDamageLv":
+                if (isUp == true)
+                {
+                    GameManager.instance.AddDamageMul(data.floatIncrement[level - 1]);
+                }
+                else if (isUp == false)
+                {
+                    GameManager.instance.AddDamageMul(-1 * data.floatIncrement[level]);
+                }
+                PlayerPrefs.SetInt("EUStaticDamageLv", level);
+                break;
 
             default:
                 break;

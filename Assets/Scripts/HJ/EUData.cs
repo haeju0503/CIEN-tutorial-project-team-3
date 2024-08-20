@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EU", menuName = "Scriptable Object/EUData")]
 public class EUData : ScriptableObject
 {
-    public enum EUType { IntEU, FloatEU, SpecialEU }
+    public enum EUType { IntEU, FloatEU, FloatMulEU, SpecialEU }
 
     [Header("# Main Info")]
     public EUType euType;
