@@ -55,9 +55,10 @@ public class EU : MonoBehaviour
                         if (type == EUObjectType.decs)
                         {
                             level++;
-                            StatChange(true);
+                            GameManager.instance.AddMaxHealth(data.intIncrement[level - 1]);
                         }
-                        level = PlayerPrefs.GetInt(data.index);
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
                     }
                     break;
                 case "EUCountLv":
@@ -66,9 +67,10 @@ public class EU : MonoBehaviour
                         if (type == EUObjectType.decs)
                         {
                             level++;
-                            StatChange(true);
+                            GameManager.instance.AddCount(data.intIncrement[level - 1]);
                         }
-                        level = PlayerPrefs.GetInt(data.index);
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
                     }
                     break;
                 case "EUDamageMulLv":
@@ -77,9 +79,10 @@ public class EU : MonoBehaviour
                         if (type == EUObjectType.decs)
                         {
                             level++;
-                            StatChange(true);
+                            GameManager.instance.AddDamageMul(data.floatIncrement[level - 1]);
                         }
-                        level = PlayerPrefs.GetInt(data.index);
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
                     }
                     break;
                 case "EUStaticDamageLv":
@@ -88,9 +91,58 @@ public class EU : MonoBehaviour
                         if (type == EUObjectType.decs)
                         {
                             level++;
-                            StatChange(true);
+                            GameManager.instance.AddStaticDamage(data.floatIncrement[level - 1]);
                         }
-                        level = PlayerPrefs.GetInt(data.index);
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
+                    }
+                    break;
+                case "EUShotSpeedLv":
+                    for (int i = 0; i < PlayerPrefs.GetInt("EUShotSpeedLv"); i++)
+                    {
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            GameManager.instance.AddShotSpeed(data.floatIncrement[level - 1]);
+                        }
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
+                    }
+                    break;
+                case "EUKnockBackLv":
+                    for (int i = 0; i < PlayerPrefs.GetInt("EUKnockBackLv"); i++)
+                    {
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            GameManager.instance.AddKnockBack(data.floatIncrement[level - 1]);
+                        }
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
+                    }
+                    break;
+                case "EURateLv":
+                    for (int i = 0; i < PlayerPrefs.GetInt("EURateLv"); i++)
+                    {
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            GameManager.instance.AddRate(data.floatIncrement[level - 1]);
+                        }
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
+                    }
+                    break;
+                case "EURestorationLv":
+                    for (int i = 0; i < PlayerPrefs.GetInt("EURestorationLv"); i++)
+                    {
+                        if (type == EUObjectType.decs)
+                        {
+                            level++;
+                            GameManager.instance.AddRestoration(data.floatIncrement[level - 1]);
+                        }
+                        else
+                            level = PlayerPrefs.GetInt(data.index);
                     }
                     break;
                 default:
@@ -297,6 +349,50 @@ public class EU : MonoBehaviour
                     GameManager.instance.AddDamageMul(-1 * data.floatIncrement[level]);
                 }
                 PlayerPrefs.SetInt("EUStaticDamageLv", level);
+                break;
+            case "EUShotSpeedLv":
+                if (isUp == true)
+                {
+                    GameManager.instance.AddShotSpeed(data.floatIncrement[level - 1]);
+                }
+                else if (isUp == false)
+                {
+                    GameManager.instance.AddShotSpeed(-1 * data.floatIncrement[level]);
+                }
+                PlayerPrefs.SetInt("EUShotSpeedLv", level);
+                break;
+            case "EUKnockBackLv":
+                if (isUp == true)
+                {
+                    GameManager.instance.AddKnockBack(data.floatIncrement[level - 1]);
+                }
+                else if (isUp == false)
+                {
+                    GameManager.instance.AddKnockBack(-1 * data.floatIncrement[level]);
+                }
+                PlayerPrefs.SetInt("EUKnockBackLv", level);
+                break;
+            case "EURateLv":
+                if (isUp == true)
+                {
+                    GameManager.instance.AddRate(data.floatIncrement[level - 1]);
+                }
+                else if (isUp == false)
+                {
+                    GameManager.instance.AddRate(-1 * data.floatIncrement[level]);
+                }
+                PlayerPrefs.SetInt("EURateLv", level);
+                break;
+            case "EURestorationLv":
+                if (isUp == true)
+                {
+                    GameManager.instance.AddRestoration(data.floatIncrement[level - 1]);
+                }
+                else if (isUp == false)
+                {
+                    GameManager.instance.AddRestoration(-1 * data.floatIncrement[level]);
+                }
+                PlayerPrefs.SetInt("EURestorationLv", level);
                 break;
 
             default:

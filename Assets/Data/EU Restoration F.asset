@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e577cc5bda4e4a44bcff2d45d34355e, type: 3}
+  m_Name: EU Restoration F
+  m_EditorClassIdentifier: 
+  euType: 1
+  index: EURestorationLv
+  euName: "\uC790\uC5F0 \uD68C\uBCF5\uB825"
+  euNDesc: "\uC790\uC5F0 \uD68C\uBCF5\uB825\uC774 \uC99D\uAC00\uD569\uB2C8\uB2E4\n\uD604\uC7AC
+    1\uCD08\uB9C8\uB2E4 \uCCB4\uB825 {0}\uB9CC\uD07C \uD68C\uBCF5"
+  euDesc: "\uC790\uC5F0\uD68C\uBCF5\uB825\uC774 {0}\uB9CC\uD07C \uC99D\uAC00\uD569\uB2C8\uB2E4\n\uD604\uC7AC
+    1\uCD08\uB9C8\uB2E4 \uCCB4\uB825 {1}\uB9CC\uD07C \uD68C\uBCF5"
+  euuMaxLvDesc: "\uCD5C\uACE0\uB808\uBCA8\uC785\uB2C8\uB2E4!\n\uD604\uC7AC 1\uCD08\uB9C8\uB2E4
+    \uCCB4\uB825 {0}\uB9CC\uD07C \uD68C\uBCF5"
+  maxLevel: 9
+  floatIncrement:
+  - 0.02
+  - 0.02
+  - 0.03
+  - 0.04
+  - 0.05
+  - 0.06
+  - 0.07
+  - 0.09
+  - 0.12
+  - 0
+  intIncrement: 
+  cost: 1e00000023000000280000002d00000032000000370000003c000000410000004600000000000000

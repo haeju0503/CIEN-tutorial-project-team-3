@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e577cc5bda4e4a44bcff2d45d34355e, type: 3}
+  m_Name: EU ShotSpeed F
+  m_EditorClassIdentifier: 
+  euType: 1
+  index: EUShotSpeedLv
+  euName: "\uD0C4\uC18D\uC99D\uAC00"
+  euNDesc: "\uD0C4\uC18D\uC774 \uBE68\uB77C\uC9D1\uB2C8\uB2E4\n\uD604\uC7AC \uCD94\uAC00
+    \uD0C4\uD658 \uC18D\uB3C4 : {0}"
+  euDesc: "\uD0C4\uC18D\uC774 {0}\uB9CC\uD07C \uBE68\uB77C\uC9D1\uB2C8\uB2E4\n\uD604\uC7AC
+    \uCD94\uAC00 \uD0C4\uD658 \uC18D\uB3C4 : {1}\n\uAE30\uBCF8 \uD0C4\uD658 \uC18D\uB3C4
+    : 5"
+  euuMaxLvDesc: "\uCD5C\uACE0\uB808\uBCA8\uC785\uB2C8\uB2E4!\n\uD604\uC7AC \uCD94\uAC00
+    \uD0C4\uD658 \uC18D\uB3C4 : {0}"
+  maxLevel: 3
+  floatIncrement:
+  - 0.5
+  - 0.5
+  - 1
+  - 0
+  intIncrement: 
+  cost: 0a0000000f0000001900000000000000

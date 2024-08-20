@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEditor.EditorTools;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using static Cinemachine.DocumentationSortingAttribute;
 
@@ -39,7 +40,10 @@ public class GameManager : MonoBehaviour
     public float shotSpeed = 0;
     public float KnockBack = 0;
     public float rate = 0;
-    
+    public float restoration = 0;
+    public int SecCounter = 0;
+
+
 
     private void Awake()
     {
@@ -67,6 +71,7 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
         uiLevelUp.Select(playerId % 2); //임시 스크립트 % 2는 전체 무기 수
         Resume();
+        SecCounter = 0;
 
         AudioManager.instance.PlayBgm(true);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Select);
@@ -126,11 +131,25 @@ public class GameManager : MonoBehaviour
             return;
 
         gameTime += Time.deltaTime;
+        
 
         if (gameTime > maxGameTime)
         {
             gameTime = maxGameTime;
             GameVictory();
+        }
+        if (gameTime > SecCounter)
+        {
+            if(maxHealth > health + restoration)
+            {
+                health += restoration;
+            }
+            else if (maxHealth <= health + restoration)
+            {
+                health = maxHealth;
+            }
+
+            SecCounter++;
         }
     }
     public void GetExp()
@@ -182,6 +201,22 @@ public class GameManager : MonoBehaviour
     public void AddStaticDamage(float amount)
     {
         StaticDamage += amount;
+    }
+    public void AddShotSpeed(float amount)
+    {
+        shotSpeed += amount;
+    }
+    public void AddKnockBack(float amount)
+    {
+        KnockBack += amount;
+    }
+    public void AddRate(float amount)
+    {
+        rate += amount;
+    }
+    public void AddRestoration(float amount)
+    {
+        restoration += amount;
     }
 
 }
