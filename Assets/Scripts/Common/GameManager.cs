@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public float maxGameTime = 2 * 10f;
     public bool isLive;
 
+    // ê²Œìž„ ì‹œìž‘ ì‹œ: 0, ë³´ìŠ¤ ì†Œí™˜ ì¤€ë¹„: 1, ì „íˆ¬ ì¤‘: 2, ë³´ìŠ¤ì „ ì¢…ë£Œ: 3 
+    public int bossState = 0;
+
+
     [Header("# Game Object")]
     public Player player;
     public PoolManager pool;
@@ -59,7 +63,7 @@ public class GameManager : MonoBehaviour
             scholarship = PlayerPrefs.GetInt("Scholarship");
         }
     }
-    public void TestDragon(int i) //Àß ÀÛµ¿ÇÏ´ÂÁö È®ÀÎÇÏ´Â Å×½ºÆ®¿ë ÇÔ¼ö (»èÁ¦ÇØµµ »ó°üX)
+    public void TestDragon(int i) //ï¿½ï¿½ ï¿½Ûµï¿½ï¿½Ï´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½Ô¼ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ ï¿½ï¿½ï¿½X)
     {
         Debug.Log(i);
     }
@@ -69,7 +73,7 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
 
         player.gameObject.SetActive(true);
-        uiLevelUp.Select(playerId % 2); //ÀÓ½Ã ½ºÅ©¸³Æ® % 2´Â ÀüÃ¼ ¹«±â ¼ö
+        uiLevelUp.Select(playerId % 2); //ï¿½Ó½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® % 2ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         Resume();
         SecCounter = 0;
 
@@ -118,8 +122,8 @@ public class GameManager : MonoBehaviour
     public void GameRetry()
     {
         SceneManager.LoadScene("Scenes/FinalScenes");
-        //¾È¿¡ ÀÌ¸§ ¶Ç´Â scene index
-        //File -> Build Setting¿¡¼­ È®ÀÎ°¡´É
+        //ï¿½È¿ï¿½ ï¿½Ì¸ï¿½ ï¿½Ç´ï¿½ scene index
+        //File -> Build Settingï¿½ï¿½ï¿½ï¿½ È®ï¿½Î°ï¿½ï¿½ï¿½
     }
     public void GameQuit()
     {
@@ -136,6 +140,14 @@ public class GameManager : MonoBehaviour
         if (gameTime > maxGameTime)
         {
             gameTime = maxGameTime;
+
+            if (bossState == 0)
+            {
+                bossState = 1;
+            }
+            if (bossState != 3)
+                return;
+            
             GameVictory();
         }
         if (gameTime > SecCounter)
@@ -177,7 +189,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    // EU °ü·Ã ------------------------------------------------
+    // EU ï¿½ï¿½ï¿½ï¿½ ------------------------------------------------
     public int GetScholarship()
     {
         return scholarship;

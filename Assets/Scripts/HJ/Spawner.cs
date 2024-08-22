@@ -5,20 +5,20 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoint;
-    //¸÷ ½ºÆù À§Ä¡
+    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
     public SpawnData[] spawnData;
-    //½ºÆùµÇ´Â ¸÷ÀÇ Á¤º¸¸¦ ÀúÀåÇÏ´Â º¯¼ö
-    //¹Ø¿¡ SpawnDataÀÇ Å¬·¡½º ÀÖÀ½
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
+    //ï¿½Ø¿ï¿½ SpawnDataï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public float levelTime;
-    //ÀüÃ¼ °ÔÀÓ ½Ã°£À» SpawnDataÀÇ ÀÎÀÚ ¼ö·Î ³ª´« °ª
-    //ÀÌ·¯¸é ¸ðµç ·¹º§ÀÇ ½Ã°£ÀÌ °°¾ÆÁü
-    //·¹º§¸¶´Ù ½Ã°£ ´Ù¸£°Ô ÇÏ°í½ÍÀ¸¸é ¼öÁ¤ÇÊ¿ä
+    //ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ SpawnDataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+    //ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½
 
     private int level;
-    //½ºÆù·¹º§, ½ºÆù·¹º§¿¡ µû¸¥ Â÷ÀÌÁ¡Àº spawnData¿¡¼­ ¼öÁ¤
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ spawnDataï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private float timer;
-    //¸÷ ½ºÆù ÁÖ±â¸¦ °è»êÇÏ±â À§ÇÑ º¯¼ö
+    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±â¸¦ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private void Awake()
     {
@@ -37,6 +37,11 @@ public class Spawner : MonoBehaviour
             timer = 0f;
         }
 
+        if (GameManager.instance.bossState == 1)
+        {
+            SpawnBoss0();
+            GameManager.instance.bossState = 2;
+        }
     }
     void Spawn()
     {
@@ -44,16 +49,23 @@ public class Spawner : MonoBehaviour
         enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         enemy.GetComponent<Enemy01>().Init(spawnData[level]);
     }
+
+    void SpawnBoss0()
+    {
+        GameObject boss = GameManager.instance.pool.Get(4);
+        boss.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
+        boss.GetComponent<Boss>().Init();
+    }
 }
 [System.Serializable]
 public class SpawnData
 {
     public int spriteType;
-    //¸÷ÀÇ ¸ð½À ¸÷ ½ºÅ©¸³Æ® EnemyÀÇ Init¿¡¼­ »ç¿ëµÊ
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® Enemyï¿½ï¿½ Initï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public float spawnTime;
-    //¸÷ÀÌ ½ºÆùÇÏ±â±îÁö ÇÊ¿äÇÑ ½Ã°£(ÃÊ)
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½(ï¿½ï¿½)
     public int health;
-    //¸÷ÀÇ Ã¼·Â
+    //ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½
     public float speed;
-    //¸÷ÀÇ ÀÌµ¿¼Óµµ
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½
 }

@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
     private Rigidbody2D rigid;
     private Collider2D coll;
     private SpriteRenderer spriter;
-    public RuntimeAnimatorController[] animCon;
+    //public RuntimeAnimatorController[] animCon;
     private SpriteRenderer spriteRenderer;
     private Animator anim;
 
@@ -23,7 +23,7 @@ public class Boss : MonoBehaviour
     {
         rigid = this.gameObject.GetComponent<Rigidbody2D>();
         coll = this.gameObject.GetComponent<Collider2D>();
-        anim = this.gameObject.GetComponent<Animator>();
+        //anim = this.gameObject.GetComponent<Animator>();
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         wait = new WaitForFixedUpdate();
         spriter = this.gameObject.GetComponent<SpriteRenderer>();
@@ -33,7 +33,8 @@ public class Boss : MonoBehaviour
         if (!GameManager.instance.isLive)
             return;
 
-        if (!islive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+        //if (!islive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+        if (!islive)
             return;
 
         Vector2 dirVec = target.position - rigid.position;
@@ -58,19 +59,20 @@ public class Boss : MonoBehaviour
         // anim.SetBool("Dead", false);
         health = maxHealth;
     }
-    public void Init(SpawnData data)
+    public void Init()
     {
         // anim.runtimeAnimatorController = animCon[data.spriteType];
-        speed = data.speed;
-        maxHealth = data.health;
-        health = data.health;
+        speed = 2;
+        maxHealth = 10;
+        health = 10;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Bullet") || !islive)
             return;
-
+        
+        Debug.Log("Boss Hit");
         health -= collision.GetComponent<Bullet>().damage;
         //StartCoroutine(KnockBack());
 
@@ -110,6 +112,7 @@ public class Boss : MonoBehaviour
 
         void Dead()
         {
+            GameManager.instance.bossState = 3;
             gameObject.SetActive(false);
         }
     }
