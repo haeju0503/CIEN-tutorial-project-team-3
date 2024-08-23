@@ -63,17 +63,14 @@ public class GameManager : MonoBehaviour
             scholarship = PlayerPrefs.GetInt("Scholarship");
         }
     }
-    public void TestDragon(int i) //�� �۵��ϴ��� Ȯ���ϴ� �׽�Ʈ�� �Լ� (�����ص� ���X)
-    {
-        Debug.Log(i);
-    }
+
     public void GameStart(int id) 
     {
         playerId = id;
         health = maxHealth;
 
         player.gameObject.SetActive(true);
-        uiLevelUp.Select(playerId % 2); //�ӽ� ��ũ��Ʈ % 2�� ��ü ���� ��
+        uiLevelUp.Select(playerId % 2); 
         Resume();
         SecCounter = 0;
 
@@ -189,7 +186,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    // EU ���� ------------------------------------------------
+    //
+    public void Damaged(float damage)
+    {
+        health -= damage * Time.deltaTime;
+    }
+
+    // EU  ------------------------------------------------
     public int GetScholarship()
     {
         return scholarship;

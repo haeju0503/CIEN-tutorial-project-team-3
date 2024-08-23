@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Map : MonoBehaviour
 {
 
-    public MapData MapData;
+    public MapData MapData;    
 
     Text textName;
 
@@ -20,7 +20,8 @@ public class Map : MonoBehaviour
     public void OnClick()
     {
         GameManager.instance.gameTime = MapData.MapTime;
-
+        //맵데이터 적 리스트, 보스 리스트로 pool Manager 자동 생성하면...
+ 
     }
 
 }

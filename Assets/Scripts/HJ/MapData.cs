@@ -9,4 +9,7 @@ public class MapData : ScriptableObject
     public string MapName;
     public int MapTime;
 
+    [Header("# Enemy")]
+    public GameObject[] EnemyList;
+    public GameObject[] BossList;
 }

@@ -7,6 +7,7 @@ public class Enemy1 : MonoBehaviour
     public float speed;
     public float health;
     public float maxHealth;
+    public float damage;
     //public RuntimeAnimatorController[] animCon;
     public Rigidbody2D target;
 
@@ -53,6 +54,7 @@ public class Enemy1 : MonoBehaviour
         speed = data.speed;
         maxHealth = data.health;
         health = data.health;
+        damage = data.damage;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

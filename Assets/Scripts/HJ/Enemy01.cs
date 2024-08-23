@@ -14,6 +14,7 @@ public class Enemy01 : MonoBehaviour
     public float maxHealth;
     public float health;
     public float speed;
+    public float damage;
     public Rigidbody2D target;
     WaitForFixedUpdate wait;
 
@@ -65,17 +66,11 @@ public class Enemy01 : MonoBehaviour
         speed = data.speed;
         maxHealth = data.health;
         health = data.health;
-
+        damage = data.damage;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!islive)
-            return;
-        /*
-        if (collision.CompareTag("Player"))
-            return;
-        */
-        if (!collision.CompareTag("Bullet"))
+        if (!collision.CompareTag("Bullet") || !islive)
             return;
 
         health -= collision.GetComponent<Bullet>().damage;
@@ -115,5 +110,11 @@ public class Enemy01 : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.transform.name == "Player")
+            GameManager.instance.Damaged(damage);
     }
 }

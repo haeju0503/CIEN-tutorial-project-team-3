@@ -70,7 +70,10 @@ public class Player : MonoBehaviour
         if (!GameManager.instance.isLive)
             return;
 
-        GameManager.instance.health -= 10 * Time.deltaTime;
+        //GameManager.instance.health -= 10 * Time.deltaTime; Enemy01로 감
+      
+
+
 
         if (GameManager.instance.health < 0)
         {

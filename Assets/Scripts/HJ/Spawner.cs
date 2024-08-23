@@ -5,20 +5,13 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoint;
-    //�� ���� ��ġ
     public SpawnData[] spawnData;
-    //�����Ǵ� ���� ������ �����ϴ� ����
-    //�ؿ� SpawnData�� Ŭ���� ����
     public float levelTime;
-    //��ü ���� �ð��� SpawnData�� ���� ���� ���� ��
-    //�̷��� ��� ������ �ð��� ������
-    //�������� �ð� �ٸ��� �ϰ������� �����ʿ�
+
 
     private int level;
-    //��������, ���������� ���� �������� spawnData���� ����
 
     private float timer;
-    //�� ���� �ֱ⸦ ����ϱ� ���� ����
 
     private void Awake()
     {
@@ -61,11 +54,9 @@ public class Spawner : MonoBehaviour
 public class SpawnData
 {
     public int spriteType;
-    //���� ��� �� ��ũ��Ʈ Enemy�� Init���� ����
     public float spawnTime;
-    //���� �����ϱ���� �ʿ��� �ð�(��)
     public int health;
-    //���� ü��
     public float speed;
-    //���� �̵��ӵ�
+
+    public float damage;
 }

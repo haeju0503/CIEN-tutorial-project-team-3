@@ -16,6 +16,7 @@ public class Boss : MonoBehaviour
     public float speed;
     public Rigidbody2D target;
     WaitForFixedUpdate wait;
+    public float damage;
 
     bool islive;
 
@@ -65,7 +66,7 @@ public class Boss : MonoBehaviour
         speed = 2;
         maxHealth = 10;
         health = 10;
-
+        damage = 50;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -115,5 +116,10 @@ public class Boss : MonoBehaviour
             GameManager.instance.bossState = 3;
             gameObject.SetActive(false);
         }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.transform.name == "Player")
+            GameManager.instance.Damaged(damage);
     }
 }
