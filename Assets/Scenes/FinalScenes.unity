@@ -3328,7 +3328,7 @@ MonoBehaviour:
   m_Follow: {fileID: 92984830}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 10
+    OrthographicSize: 7
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -5703,7 +5703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 250047.23}
+  m_AnchoredPosition: {x: -5, y: 282179}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &464654193
@@ -8731,9 +8731,9 @@ GameObject:
   m_Component:
   - component: {fileID: 675049804}
   - component: {fileID: 675049803}
-  - component: {fileID: 675049802}
   - component: {fileID: 675049801}
   - component: {fileID: 675049800}
+  - component: {fileID: 675049802}
   - component: {fileID: 675049799}
   m_Layer: 0
   m_Name: Main Camera
@@ -8799,8 +8799,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 18
-  m_RefResolutionX: 135
-  m_RefResolutionY: 270
+  m_RefResolutionX: 320
+  m_RefResolutionY: 90
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -8849,7 +8849,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
