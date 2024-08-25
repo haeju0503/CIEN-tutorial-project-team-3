@@ -28,6 +28,7 @@ public class LevelUp : MonoBehaviour
         GameManager.instance.Resume();
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Select);
         AudioManager.instance.EffectBgm(false);
+        GameManager.instance.GetExp(0);
     }
     public void Select(int index)
     {

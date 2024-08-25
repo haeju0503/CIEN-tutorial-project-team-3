@@ -161,17 +161,20 @@ public class GameManager : MonoBehaviour
             SecCounter++;
         }
     }
-    public void GetExp()
+    public void GetExp(int amount)
     {
         if (!isLive)
             return;
 
-        exp++;
+        for(int index=0; index<amount; index++)
+        {
+            exp++;
+        }
 
         if (exp >= nextExp[Mathf.Min(level, nextExp.Length - 1)])
         {
+            exp -= nextExp[Mathf.Min(level, nextExp.Length - 1)];
             level++;
-            exp = 0;
             uiLevelUp.Show();
         }
     }

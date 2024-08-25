@@ -5703,7 +5703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 235254.98}
+  m_AnchoredPosition: {x: -5, y: 245492.86}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &464654193
@@ -11557,11 +11557,13 @@ MonoBehaviour:
     health: 1
     speed: 1
     damage: 10
+    exp: 1
   - spriteType: 1
     spawnTime: 1
     health: 2
     speed: 1.5
     damage: 50
+    exp: 3
   levelTime: 0
 --- !u!1 &967977488
 GameObject:
@@ -16010,19 +16012,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGMslider: {fileID: 2024156989}
   SFXslider: {fileID: 1401930398}
-  bgmClip: {fileID: 8300000, guid: 4559935c00ef8e94b846e2e03e39f0d0, type: 3}
+  bgmClip:
+  - {fileID: 8300000, guid: 17d6a79f449ad3e438597203140f96dc, type: 3}
+  - {fileID: 8300000, guid: fd47879294789c44e98e80805beb9cce, type: 3}
+  - {fileID: 8300000, guid: 6f2d445ef36a71744a7f0e7798e8493c, type: 3}
   bgmVolume: 0.2
   sfxClips:
   - {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
-  - {fileID: 8300000, guid: 0bddcb411d826e14bb26d40ae45d8e22, type: 3}
-  - {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
-  - {fileID: 8300000, guid: 64795b87003c2324fa0814fbc336066c, type: 3}
+  - {fileID: 8300000, guid: 14d7b5bd9d896be418966c4a5d721087, type: 3}
+  - {fileID: 8300000, guid: 3979269adbe923946be92244fb500d56, type: 3}
+  - {fileID: 8300000, guid: 15496a1f8bb6c72429de8908e9970190, type: 3}
   - {fileID: 8300000, guid: c8a3fe17a6641ec48b38fb455a40a223, type: 3}
   - {fileID: 8300000, guid: 14f24de2a9a70154e96297de25e2184c, type: 3}
   - {fileID: 8300000, guid: d1bef3102d08ba944ac7bcac65733a26, type: 3}
-  - {fileID: 8300000, guid: 6f0c572d865b4664db7a460972bc4768, type: 3}
-  - {fileID: 8300000, guid: 4b294d59d2399014daa718b35c9de73b, type: 3}
-  - {fileID: 8300000, guid: 2c4bc183a5df5aa4baf7c4fcf236a2de, type: 3}
+  - {fileID: 8300000, guid: 4cabb1e8255aea1428f6afe507ff969d, type: 3}
+  - {fileID: 8300000, guid: cc6dc78a1b0e6b74e9744ef79f7dae2f, type: 3}
+  - {fileID: 8300000, guid: 1b2050328c1828a4d825f3e82ad599e5, type: 3}
+  - {fileID: 8300000, guid: a24a77cdea161ba4eae994e4219a92b5, type: 3}
+  - {fileID: 8300000, guid: db8e20d229b2c1045a1f53dd46084454, type: 3}
+  - {fileID: 8300000, guid: d9ef216ab0631f641a64911ec9c28cd1, type: 3}
   sfxVolume: 0.5
   channels: 16
 --- !u!4 &1319886311

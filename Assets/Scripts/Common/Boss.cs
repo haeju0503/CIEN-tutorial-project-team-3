@@ -17,6 +17,7 @@ public class Boss : MonoBehaviour
     public Rigidbody2D target;
     WaitForFixedUpdate wait;
     public float damage;
+    public int exp;
 
     bool islive;
 
@@ -67,13 +68,14 @@ public class Boss : MonoBehaviour
         maxHealth = 10;
         health = 10;
         damage = 50;
+        exp = 0; //지금은 보스 잡으면 겜 끝나니깐
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Bullet") || !islive)
             return;
         
-        Debug.Log("Boss Hit");
+        //Debug.Log("Boss Hit");
         health -= collision.GetComponent<Bullet>().damage;
         //StartCoroutine(KnockBack());
 
@@ -90,7 +92,7 @@ public class Boss : MonoBehaviour
             spriter.sortingOrder = 1;
             // anim.SetBool("Dead", true);
             GameManager.instance.kill++;
-            GameManager.instance.GetExp();
+            GameManager.instance.GetExp(exp);
 
             if (GameManager.instance.isLive)
                 AudioManager.instance.PlaySfx(AudioManager.Sfx.Dead);

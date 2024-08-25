@@ -15,6 +15,7 @@ public class Enemy01 : MonoBehaviour
     public float health;
     public float speed;
     public float damage;
+    public int exp;
     public Rigidbody2D target;
     WaitForFixedUpdate wait;
 
@@ -67,6 +68,7 @@ public class Enemy01 : MonoBehaviour
         maxHealth = data.health;
         health = data.health;
         damage = data.damage;
+        exp = data.exp;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,7 +91,7 @@ public class Enemy01 : MonoBehaviour
             spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
             GameManager.instance.kill++;
-            GameManager.instance.GetExp();
+            GameManager.instance.GetExp(exp);
 
             if (GameManager.instance.isLive)
                 AudioManager.instance.PlaySfx(AudioManager.Sfx.Dead);
