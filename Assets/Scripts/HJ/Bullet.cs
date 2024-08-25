@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
 
         per--;
 
-        if (per >= -100)
+        if (per <= 0)
         {
             rigid.velocity = Vector2.zero;
             gameObject.SetActive(false);

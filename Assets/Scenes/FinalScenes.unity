@@ -5703,7 +5703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 245492.86}
+  m_AnchoredPosition: {x: -5, y: 250047.23}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &464654193
@@ -9746,7 +9746,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 0500000006000000070000000d0000000e0000000f0000001d0000001e0000001f00000028000000290000002a000000
+  nextExp: 030000000400000005000000090000000a0000000b0000001500000016000000170000001e0000001f00000020000000
   health: 0
   maxHealth: 100
   scholarship: 0
