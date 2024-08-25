@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         Resume();
         SecCounter = 0;
 
-        AudioManager.instance.PlayBgm(true);
+        AudioManager.instance.PlayBgm(1, true);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Select);
     }
 
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         uiResult.Lose();
         Stop();
 
-        AudioManager.instance.PlayBgm(false);
+        AudioManager.instance.PlayBgm(1, false);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Lose);
     }
 
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         uiResult.Win();
         Stop();
 
-        AudioManager.instance.PlayBgm(false);
+        AudioManager.instance.PlayBgm(1, false);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Win);
     }
     public void GameRetry()

@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     public Slider SFXslider;
 
     [Header("# BGM")]
-    public AudioClip bgmClip;
+    public AudioClip[] bgmClip;
     public float bgmVolume;
     private AudioSource bgmPlayer;
     private AudioHighPassFilter bgmEffect;
@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource[] sfxPlayers;
     private int channelIndex;
 
-    public enum Sfx { Dead, Hit, LevelUp = 3, Lose, Melee, Range = 7, Select, Win }
+    public enum Sfx { Dead, Hit, LevelUp = 3, Lose, Melee, Range = 7, Select = 11, Win }
     private void Awake()
     {
         instance = this;
@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.playOnAwake = false;
         bgmPlayer.loop = true;
         bgmPlayer.volume = bgmVolume;
-        bgmPlayer.clip = bgmClip;
+        bgmPlayer.clip = bgmClip[0];
         bgmEffect = Camera.main.GetComponent<AudioHighPassFilter>();
 
         //효과음 플레이어 초기화
@@ -58,9 +58,13 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[index].bypassListenerEffects = true;
             sfxPlayers[index].volume = sfxVolume;
         }
+
+        PlayBgm(0, true);
     }
-    public void PlayBgm(bool isPlay)
+    public void PlayBgm(int index, bool isPlay)
     {
+        bgmPlayer.clip = bgmClip[index];
+
         if (isPlay)
         {
             bgmPlayer.Play();
@@ -88,6 +92,10 @@ public class AudioManager : MonoBehaviour
             {
                 ranIndex = Random.Range(0, 2);
             }
+            if (sfx == Sfx.Range)
+            {
+                ranIndex = Random.Range(0, 4);
+            }
 
             channelIndex = loopIndex;
             sfxPlayers[loopIndex].clip = sfxClips[(int)sfx + ranIndex];
@@ -98,18 +106,7 @@ public class AudioManager : MonoBehaviour
     public void ButtonClick()
     {
         //버튼 눌렸을 때 소리나도록 하는 함수
-        for (int index = 0; index < sfxPlayers.Length; index++)
-        {
-            int loopIndex = (index + channelIndex) % sfxPlayers.Length;
-
-            if (sfxPlayers[loopIndex].isPlaying)
-                continue;
-
-            channelIndex = loopIndex;
-            sfxPlayers[loopIndex].clip = sfxClips[8];
-            sfxPlayers[loopIndex].Play();
-            break;
-        }
+        PlaySfx(Sfx.Select);
     }
     public void SetBGM()
     {
