@@ -80,7 +80,7 @@ public class Weapon : MonoBehaviour
         switch (Id)
         {
             case 0:
-                speed = 150 * Character.WeaponSpeed;
+                speed = 120 * Character.WeaponSpeed;
                 Batch();
                 break;
             case 1:
@@ -129,7 +129,7 @@ public class Weapon : MonoBehaviour
 
             Vector3 rotVec = Vector3.back * 360 * index / count;
             bullet.Rotate(rotVec);
-            bullet.Translate(bullet.up * 1f, Space.World);
+            bullet.Translate(bullet.up * 1.5f, Space.World);
             bullet.GetComponent<Bullet>().Init(damage, -100, Vector3.zero); // -100 is infinity Per.
 
         }

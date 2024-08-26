@@ -5703,7 +5703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 287276.03}
+  m_AnchoredPosition: {x: -5, y: 297648.34}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &464654193
@@ -9750,7 +9750,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   scholarship: 0
-  DamageMul: 0
+  DamageMul: 1
   StaticDamage: 0
   additionalCount: 0
   shotSpeed: 0
