@@ -80,7 +80,7 @@ public class Weapon : MonoBehaviour
         switch (Id)
         {
             case 0:
-                speed = 120 * Character.WeaponSpeed;
+                speed = 105 * Character.WeaponSpeed;
                 Batch();
                 break;
             case 1:
@@ -161,7 +161,7 @@ public class Weapon : MonoBehaviour
         Vector3 targetPos = player.scanner.nearestTarget.position;
         Vector3 dir = targetPos - transform.position;
 
-        dir = dir.normalized * (5 + GameManager.instance.shotSpeed);
+        dir = dir.normalized * (6 + GameManager.instance.shotSpeed);
 
         Transform bullet = GameManager.instance.pool.Get(prefabId).transform;
         bullet.position = transform.position;

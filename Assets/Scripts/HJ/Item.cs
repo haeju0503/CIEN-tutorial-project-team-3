@@ -34,9 +34,22 @@ public class Item : MonoBehaviour
         switch (data.itemType)
         {
             case ItemData.ItemType.Melee:
+                if (level == 0)
+                    textDesc.text = "주위을 회전하는\n 노트 장착";
+                else
+                    textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
+                break;                
             case ItemData.ItemType.Range:
+                if (level == 0)
+                    textDesc.text = "가까운 적에게 연필 발사";
+                else
+                    textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
+                break;
             case ItemData.ItemType.AI:
-                textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
+                if (level == 0)
+                    textDesc.text = "주위에 피해를 입히는\n 영역 생성";
+                else
+                    textDesc.text = string.Format(data.itemDesc, data.damages[level] * 100, data.counts[level]);
                 break;
             case ItemData.ItemType.Glove:
             case ItemData.ItemType.Shoe:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    //ÀÌ°Íµé ´Ù ¿¹ºñ, Ä³¸¯ÅÍ Ãß°¡(¶Ç´Â ±âÈ¹)ÇÏ¸é ±×°É·Î ¹Ù²Ù¼À
+    //ï¿½Ì°Íµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½(ï¿½Ç´ï¿½ ï¿½ï¿½È¹)ï¿½Ï¸ï¿½ ï¿½×°É·ï¿½ ï¿½Ù²Ù¼ï¿½
     public static float Speed
     {
         get { return GameManager.instance.playerId == 0 ? 1.1f : 1f; }
@@ -19,10 +19,10 @@ public class Character : MonoBehaviour
     }
     public static float Damage
     {
-        get { return GameManager.instance.playerId == 0 ? 1.2f : 1f; }
+        get { return GameManager.instance.playerId == 2 ? 1.2f : 1f; }
     }
     public static int Count
     {
-        get { return GameManager.instance.playerId == 2 ? 1 : 0; }
+        get { return GameManager.instance.playerId == 3 ? 1 : 0; }
     }
 }
