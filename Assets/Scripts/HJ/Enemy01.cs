@@ -18,6 +18,7 @@ public class Enemy01 : MonoBehaviour
     public int exp;
     public Rigidbody2D target;
     WaitForFixedUpdate wait;
+    Transform trans;
 
     bool islive;
 
@@ -30,6 +31,7 @@ public class Enemy01 : MonoBehaviour
         spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         wait = new WaitForFixedUpdate();
         spriter = this.gameObject.GetComponent<SpriteRenderer>();
+        trans = this.gameObject.GetComponent<Transform>();
     }
     void FixedUpdate()
     {
@@ -69,6 +71,19 @@ public class Enemy01 : MonoBehaviour
         health = data.health;
         damage = data.damage;
         exp = data.exp;
+
+        switch (data.index)
+        {
+            case 0:
+                trans.localScale = new Vector3(5, 5, 5);
+                break;
+
+
+
+            default:
+                trans.localScale = new Vector3(5, 5, 5);
+                break;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -118,5 +133,9 @@ public class Enemy01 : MonoBehaviour
     {
         if (collision.transform.name == "Player")
             GameManager.instance.Damaged(damage);
+    }
+    public void BOOM()
+    {
+        Debug.Log("BOOM");
     }
 }

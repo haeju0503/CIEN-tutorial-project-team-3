@@ -1002,7 +1002,7 @@ MonoBehaviour:
   scanner: {fileID: 0}
   hands: []
   animCon:
-  - {fileID: 9100000, guid: afc9b78b48b37b34897f1401f8e20eb4, type: 2}
+  - {fileID: 22100000, guid: 4d45ed815f365b84ba14319292e6ac17, type: 2}
   - {fileID: 22100000, guid: 6496a72f6f5168c45ac8b6c5485b34c4, type: 2}
   - {fileID: 22100000, guid: f8a58890730e78d4bae604539acc9e72, type: 2}
   - {fileID: 22100000, guid: 739efcd95523c674e81b1f6a8fa5f146, type: 2}
@@ -5703,7 +5703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 297648.34}
+  m_AnchoredPosition: {x: -5, y: 484046}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &464654193
@@ -11552,15 +11552,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: []
   spawnData:
-  - spriteType: 0
+  - index: 0
+    spriteType: 0
     spawnTime: 3
-    health: 1
+    health: 10
     speed: 1
     damage: 10
     exp: 1
-  - spriteType: 1
+  - index: 1
+    spriteType: 1
     spawnTime: 1
-    health: 2
+    health: 15
     speed: 1.5
     damage: 50
     exp: 3
@@ -19475,7 +19477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 8205363627979700807, guid: dc06faf5740bb3846b8a0dbf67b50bc7, type: 3}
+  - {fileID: 734770694563926667, guid: e3f692a1b2f2c5a4398148aa7d33c503, type: 3}
   - {fileID: 3966816127966976866, guid: 3681076fa2ac9ab4783def34f1346ef9, type: 3}
   - {fileID: 4263556726267963876, guid: baf5faf42a67bb5469f556e260a1d267, type: 3}
   - {fileID: 7368215443546126498, guid: 46247af6072694d6b8c9c635239f3d06, type: 3}

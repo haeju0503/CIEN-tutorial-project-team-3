@@ -53,6 +53,8 @@ public class Spawner : MonoBehaviour
 [System.Serializable]
 public class SpawnData
 {
+    public int index;
+
     public int spriteType;
     public float spawnTime;
     public int health;
@@ -60,4 +62,5 @@ public class SpawnData
 
     public float damage;
     public int exp;
+
 }
