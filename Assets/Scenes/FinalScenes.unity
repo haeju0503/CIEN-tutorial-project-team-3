@@ -5782,7 +5782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 498436.34}
+  m_AnchoredPosition: {x: -5, y: 504989.2}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &464654193
@@ -21086,7 +21086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3b51fdf34667f408c8ec834e7d14b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: b957101fb2b73cb4d8f729e8719bd64f, type: 2}
+  data: {fileID: 11400000, guid: 171974267881e4c41b51e296da97caf1, type: 2}
   level: 0
   weapon: {fileID: 0}
   gear: {fileID: 0}
