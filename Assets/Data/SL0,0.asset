@@ -9,8 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5c494b088c32a48bdc544799c0d696, type: 3}
-  m_Name: Map 0
+  m_Script: {fileID: 11500000, guid: 43ed5af5f6885c74ca2c832ddf7a1c45, type: 3}
+  m_Name: SL0,0
   m_EditorClassIdentifier: 
-  MapName: "\uAC15\uC758\uC2E4"
-  MapTime: 1
+  mapindex: 0
+  levelindex: 0
+  maintainSec: 20
+  maxSDColumn: 1
+  spawnData:
+  - index: 0
+    spriteType: 0
+    spawnTime: 2
+    health: 10
+    speed: 1.2
+    damage: 10
+    exp: 1
+  LCM: 2

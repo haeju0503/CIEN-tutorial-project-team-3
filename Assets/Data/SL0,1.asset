@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ed5af5f6885c74ca2c832ddf7a1c45, type: 3}
+  m_Name: SL0,1
+  m_EditorClassIdentifier: 
+  mapindex: 0
+  levelindex: 1
+  maintainSec: 30
+  maxSDColumn: 2
+  spawnData:
+  - index: 0
+    spriteType: 0
+    spawnTime: 1.5
+    health: 10
+    speed: 1.2
+    damage: 10
+    exp: 1
+  - index: 1
+    spriteType: 1
+    spawnTime: 3
+    health: 25
+    speed: 1.6
+    damage: 20
+    exp: 3
+  LCM: 3

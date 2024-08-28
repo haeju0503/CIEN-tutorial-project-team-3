@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy01 : MonoBehaviour
+public class Enemy03 : MonoBehaviour
 {
     private Rigidbody2D rigid;
     private Collider2D coll;
@@ -133,5 +133,9 @@ public class Enemy01 : MonoBehaviour
     {
         if (collision.transform.name == "Player")
             GameManager.instance.Damaged(damage);
+    }
+    public void BOOM()
+    {
+        Debug.Log("BOOM");
     }
 }

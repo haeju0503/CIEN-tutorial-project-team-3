@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
     public float restoration = 0;
     public int SecCounter = 0;
 
-
+    [Header("# Map Info")]
+    public int MapIndex = 0;
 
     private void Awake()
     {

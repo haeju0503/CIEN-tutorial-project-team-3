@@ -8,8 +8,4 @@ public class MapData : ScriptableObject
     [Header("# Main Info")]
     public string MapName;
     public int MapTime;
-
-    [Header("# Enemy")]
-    public GameObject[] EnemyList;
-    public GameObject[] BossList;
 }

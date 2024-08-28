@@ -20,7 +20,6 @@ public class Map : MonoBehaviour
     public void OnClick()
     {
         GameManager.instance.maxGameTime = MapData.MapTime * 60;
-        //맵데이터 속 적 리스트, 보스 리스트 등을 가지고 pool Manager 자동 생성하면...
  
     }
 
