@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animCon:
-  - {fileID: 9100000, guid: 828c6ef044c0122498d301980868bd27, type: 2}
+  - {fileID: 22100000, guid: 01d8f3c29dfde2c478b2acebac7fc6a8, type: 2}
   - {fileID: 22100000, guid: c52be5aad22c93c4695e1122a36152ed, type: 2}
   - {fileID: 22100000, guid: 0f677d8f5e5c9b441acf02e762cf05f8, type: 2}
   maxHealth: 0
