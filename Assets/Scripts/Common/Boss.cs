@@ -66,7 +66,7 @@ public class Boss : MonoBehaviour
         // anim.runtimeAnimatorController = animCon[data.spriteType];
         speed = 2;
         maxHealth = 10;
-        health = 10;
+        health = 100;
         damage = 50;
         exp = 0; //지금은 보스 잡으면 겜 끝나니깐
     }

@@ -145,7 +145,7 @@ public class Weapon : MonoBehaviour
 
         bullet.localPosition = Vector3.zero;
 
-        Vector3 scaleVec = new Vector3(1+(count/100), 1+(count/100), 0);
+        Vector3 scaleVec = new Vector3(1.8f+(count/100), 1.8f+(count/100), 0);
         bullet.localScale = scaleVec;
 
         bullet.GetComponent<Bullet>().Init(damage, -100, Vector3.zero);

@@ -27,7 +27,7 @@ public class Gear : MonoBehaviour
     {
         switch (type)
         {
-            case ItemData.ItemType.Glove: //¾ÆÀÌÅÛÅ¸ÀÔ ¹Ù²Ù¸é ÀÌ°Íµµ ¹Ù²ã¾ßµÉÁöµµ
+            case ItemData.ItemType.Glove: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½Ù²Ù¸ï¿½ ï¿½Ì°Íµï¿½ ï¿½Ù²ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½
                 RateUp();
                 break;
             case ItemData.ItemType.Shoe:
@@ -42,11 +42,11 @@ public class Gear : MonoBehaviour
         {
             switch (weapon.Id)
             {
-                case 0: //(»ð) ºùºù µµ´Â °Í
-                    float speed = 150 * Character.WeaponSpeed + 50 * GameManager.instance.rate;
+                case 0: //(ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+                    float speed = 105 * Character.WeaponSpeed + 50 * GameManager.instance.rate;
                     weapon.speed = speed + (speed * rate);
                     break;
-                default: // µðÆúÆ®°¡ ÃÑ ½î´Â°Í, ¹«±â ¸¹¾ÆÁö¸é ÄÉÀÌ½º µû·Î ¸¸µé¾î¾ßµÉÁöµµ..
+                default: // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Â°ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½..
                     speed = 0.5f * Character.WeaponRate;
                     weapon.speed = speed * (1f - rate) * (1f - GameManager.instance.rate);
                     break;
@@ -55,7 +55,7 @@ public class Gear : MonoBehaviour
     }
 
     void SpeedUp()
-    {   //±âº»½ºÇÇµå 3À¸·Î?
+    {   //ï¿½âº»ï¿½ï¿½ï¿½Çµï¿½ 3ï¿½ï¿½ï¿½ï¿½?
         float speed = 3 * Character.Speed;
         GameManager.instance.player.speed = speed + speed * rate;
     }
