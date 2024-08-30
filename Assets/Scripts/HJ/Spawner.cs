@@ -126,7 +126,7 @@ public class Spawner : MonoBehaviour
         boss.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position;
         boss.GetComponent<Boss>().Init();
     }
-    /* 최소공배수 구하는 부분2
+    /* 최소공배수 구하는 부분2 *오류있음! 쓰지마셈
     private float GetLCM(SpawnData[] spawnData, int maxColumn)
     {
         if (maxColumn == 1) //몹이 한 마리밖에 없다면 그 몹의 spawnTime이 최대공약수

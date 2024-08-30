@@ -19,16 +19,16 @@ MonoBehaviour:
   spawnData:
   - index: 0
     spriteType: 1
-    spawnTime: 1.5
-    health: 10
-    speed: 1.2
+    spawnTime: 0.8
+    health: 30
+    speed: 1.7
     damage: 10
-    exp: 1
-  - index: 1
-    spriteType: 1
-    spawnTime: 3
-    health: 25
-    speed: 1.6
-    damage: 20
     exp: 3
-  LCM: 3
+  - index: 1
+    spriteType: 2
+    spawnTime: 4
+    health: 80
+    speed: 0.8
+    damage: 80
+    exp: 9
+  LCM: 4
